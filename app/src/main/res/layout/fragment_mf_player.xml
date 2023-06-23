@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@color/mf_player_background">
+
+    <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+        android:id="@+id/mf_fragment_player_but"
+        style="@style/MFImageView.small"
+        app:mf_image_draw="@drawable/mf_play_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+            <SeekBar
+                android:id="@+id/mf_fragment_player_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="0" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:gravity="">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start">
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_player_time"
+                    style="@style/MFLabel.small"
+                    android:layout_gravity="start"
+                    app:mf_label_formattedText="00:00"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end">
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_player_time_all"
+                    style="@style/MFLabel.small"
+                    android:layout_gravity="end"
+                    app:mf_label_formattedText="00:00"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

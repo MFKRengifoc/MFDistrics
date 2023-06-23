@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">>
+    <!--  MFModalBottomSheet -->
+    <style name="MFModalottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/MFModalBottomSheetStyle</item>
+    </style>
+    <style name="MFModalBottomSheetStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/mf_bottom_sheet_round_layout</item>
+    </style>
+    <!--  MFButtonTextIcon  -->
+    <style name="MFButtonTextIcon" parent="Theme.MFDistrics">
+        <item name="android:layout_width">@dimen/mf_button_width_m</item>
+        <item name="android:layout_height">@dimen/mf_button_height_m</item>
+        <item name="mf_button_bg">@drawable/mf_button_primary_selector_but</item>
+        <item name="mf_button_color_text">?onPrimary</item>
+    </style>
+    <style name="MFButtonTextIcon.small" parent="MFButtonTextIcon">
+        <item name="android:layout_width">@dimen/mf_button_width_s</item>
+        <item name="android:layout_height">@dimen/mf_button_height_s</item>
+        <item name="mf_button_text_size">@dimen/mf_button_text_s</item>
+    </style>
+    <style name="MFButtonTextIcon.medium" parent="MFButtonTextIcon">
+        <item name="android:layout_width">@dimen/mf_button_width_m</item>
+        <item name="android:layout_height">@dimen/mf_button_height_m</item>
+        <item name="mf_button_text_size">@dimen/mf_button_text_m</item>
+    </style>
+    <style name="MFButtonTextIcon.large" parent="MFButtonTextIcon">
+        <item name="android:layout_width">@dimen/mf_button_width_l</item>
+        <item name="android:layout_height">@dimen/mf_button_height_l</item>
+        <item name="mf_button_text_size">@dimen/mf_button_text_l</item>
+    </style>
+    <style name="MFButtonTextIcon.extraLarge" parent="MFButtonTextIcon">
+        <item name="android:layout_width">@dimen/mf_button_width_xl</item>
+        <item name="android:layout_height">@dimen/mf_button_height_xl</item>
+        <item name="mf_button_text_size">@dimen/mf_button_text_xl</item>
+    </style>
+    <!--  MFLabel  -->
+    <style name="MFLabel" parent="Theme.MFDistrics">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="mf_label_color">@color/primaryText_dark</item>
+    </style>
+    <style name="MFLabel.small" parent="MFLabel">
+        <item name="mf_label_size">@dimen/mf_label_text_s</item>
+    </style>
+    <style name="MFLabel.medium" parent="MFLabel">
+        <item name="mf_label_size">@dimen/mf_label_text_m</item>
+    </style>
+    <style name="MFLabel.large" parent="MFLabel">
+        <item name="mf_label_size">@dimen/mf_label_text_l</item>
+    </style>
+    <style name="MFLabel.extraLarge" parent="MFLabel">
+        <item name="mf_label_size">@dimen/mf_label_text_xl</item>
+    </style>
+    <!--  MFChip  -->
+    <style name="MFChip" parent="Theme.MFDistrics">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="mf_chip_background_color">@color/background_dark</item>
+        <item name="mf_chip_color_value_text">@color/onPrimary_dark</item>
+    </style>
+    <style name="MFChip.small" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_width_s</item>
+        <item name="android:layout_height">@dimen/mf_chip_height_s</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_s</item>
+    </style>
+    <style name="MFChip.medium" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_width_m</item>
+        <item name="android:layout_height">@dimen/mf_chip_height_m</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_m</item>
+    </style>
+    <style name="MFChip.large" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_width_l</item>
+        <item name="android:layout_height">@dimen/mf_chip_height_l</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_l</item>
+    </style>
+    <style name="MFChip.extralarge" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_width_xl</item>
+        <item name="android:layout_height">@dimen/mf_chip_height_xl</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_xl</item>
+    </style>
+    <!--  MFImageView  -->
+    <style name="MFImageView" parent="Theme.MFDistrics">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MFImageView.smallicon" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_xxs</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_xxs</item>
+    </style>
+    <style name="MFImageView.icon" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_xs</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_xs</item>
+    </style>
+    <style name="MFImageView.small" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_s</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_s</item>
+    </style>
+    <style name="MFImageView.medium" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_m</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_m</item>
+    </style>
+    <style name="MFImageView.large" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_l</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_l</item>
+    </style>
+    <style name="MFImageView.extralarge" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_width_xl</item>
+        <item name="android:layout_height">@dimen/mf_image_view_heigth_xl</item>
+    </style>
+    <style name="MFImageView.landscape" parent="MFImageView">
+        <item name="android:layout_width">@dimen/mf_image_view_landscape_width_l</item>
+        <item name="android:layout_height">@dimen/mf_image_view_landscape_heigth_l</item>
+    </style>
+    <!--  MFMaps  -->
+    <style name="MFMaps" parent="Theme.MFDistrics">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="MFMaps.full" parent="MFMaps">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="MFMaps.small" parent="MFMaps">
+        <item name="android:layout_width">@dimen/mf_maps_width_s</item>
+        <item name="android:layout_height">@dimen/mf_maps_height_s</item>
+    </style>
+    <style name="MFMaps.medium" parent="MFMaps">
+        <item name="android:layout_width">@dimen/mf_maps_width_m</item>
+        <item name="android:layout_height">@dimen/mf_maps_height_m</item>
+    </style>
+    <style name="MFMaps.large" parent="MFMaps">
+        <item name="android:layout_width">@dimen/mf_maps_width_l</item>
+        <item name="android:layout_height">@dimen/mf_maps_height_l</item>
+    </style>
+    <style name="MFMaps.extralarge" parent="MFMaps">
+        <item name="android:layout_width">@dimen/mf_maps_width_xl</item>
+        <item name="android:layout_height">@dimen/mf_maps_height_xl</item>
+    </style>
+</resources>

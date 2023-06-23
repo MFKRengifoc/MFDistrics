@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.HomeActivity"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:weightSum="12">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_activity_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start|center"
+        android:layout_weight="1"
+        android:background="#191818"
+        android:weightSum="4"
+        android:backgroundTint="@color/home_activity_top_bar_color_tint_bg">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                android:id="@+id/home_activity_back_but"
+                android:layout_width="@dimen/home_activity_back_arrow_width"
+                android:layout_height="@dimen/home_activity_back_arrow_height"
+                app:mf_image_draw="@drawable/home_activity_back_arrow_icon"
+                android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"/>
+
+            <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                android:id="@+id/home_activity_city_name"
+                style="@style/MFLabel.medium"
+                android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/home_activity_back_but"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:mf_label_formattedText="Madrid" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                style="@style/MFImageView.icon"
+                android:id="@+id/home_activity_calendar_but"
+                app:mf_image_draw="@drawable/home_activity_calendar_icon"
+                android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"/>
+
+            <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                style="@style/MFImageView.icon"
+                android:id="@+id/home_activity_navigation_but"
+                app:mf_image_draw="@drawable/home_activity_navigation_icon"
+                android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_activity_top_bar_place_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start|center"
+        android:layout_weight="1"
+        android:background="#191818"
+        android:weightSum="4"
+        android:backgroundTint="@color/home_activity_top_bar_color_bg">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                android:id="@+id/home_activity_place_name"
+                style="@style/MFLabel.medium"
+                app:mf_label_formattedText="Ciudad"
+                android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"
+                app:mf_label_color="@color/font_text_primary"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <com.manoffocus.mfdistricts.components.mfchiptext.MFChipText
+                android:id="@+id/home_activity_points_count"
+                style="@style/MFImageView.small"
+                app:mf_chip_text_color="#eaf6ff"
+                app:mf_chip_text_icon="@drawable/home_activity_place_icon"
+                app:mf_chip_text_background_color="?transparent_bg"/>
+
+            <LinearLayout
+                android:id="@+id/home_activity_list_box"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                    android:id="@+id/home_activity_list_but"
+                    android:layout_width="@dimen/home_activity_back_arrow_width"
+                    android:layout_height="@dimen/home_activity_back_arrow_height"
+                    app:mf_image_draw="@drawable/home_activity_list_icon"
+                    android:layout_marginHorizontal="@dimen/home_activity_horizontal_margin"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+        <fragment
+            android:id="@+id/mf_maps_fragment"
+            android:name="com.manoffocus.mfdistricts.screens.mfmaps.MFMapsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <fragment
+            android:id="@+id/mf_pois_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.manoffocus.mfdistricts.screens.mfpois.MFPoisFragment"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

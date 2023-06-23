@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+            android:id="@+id/MFImageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:mf_image_draw="@drawable/mf_marker_simple_icon"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginBottom="100dp">
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_marker_simple_day"
+                    style="@style/MFLabel.extraLarge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mf_label_formattedText="25"
+                    app:mf_label_size="120dp"
+                    app:mf_label_color="@color/white"/>
+
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_marker_simple_month"
+                    style="@style/MFLabel.extraLarge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:mf_label_formattedText="Feb"
+                    app:mf_label_size="100dp"
+                    app:mf_label_color="@color/white"/>
+            </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

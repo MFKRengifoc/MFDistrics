@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  MFLabel  -->
+    <declare-styleable name="MFLabel">
+        <attr name="mf_label_formattedText" format="string" />
+        <attr name="mf_label_color" format="color" />
+        <attr name="mf_label_size" format="dimension" />
+        <attr name="mf_label_use_custom_font" format="boolean" />
+        <attr name="mf_label_bold" format="boolean" />
+        <attr name="mf_label_alignment_text" format="integer">
+            <enum name="inherit" value="0" />
+            <!-- Default for the root view. The gravity determines the alignment, ALIGN_NORMAL,
+                ALIGN_CENTER, or ALIGN_OPPOSITE, which are relative to each paragraph’s
+                text direction. -->
+            <enum name="gravity" value="1" />
+            <enum name="textStart" value="2" />
+            <enum name="textEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="viewStart" value="5" />
+            <enum name="viewEnd" value="6" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MFImageView">
+        <attr name="mf_image_draw" format="integer" />
+        <attr name="mf_image_url" format="string" />
+        <attr name="mf_image_size" format="dimension" />
+        <attr name="mf_image_tint_color" format="color" />
+        <attr name="mf_image_view_accessible" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="MFButtonTextIcon">
+        <attr name="mf_button_text" format="string" />
+        <attr name="mf_button_bg" format="reference" />
+        <attr name="mf_button_tint_color" format="color" />
+        <attr name="mf_button_icon" format="integer" />
+        <attr name="mf_button_text_size" format="dimension" />
+        <attr name="mf_button_color_text" format="color" />
+        <attr name="mf_button_accessible" format="boolean"/>
+        <attr name="mf_button_content_description" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="MFChip">
+        <attr name="mf_chip_title_text" format="string" />
+        <attr name="mf_chip_value_text" format="string" />
+        <attr name="mf_chip_icon_startIcon" format="reference" />
+        <attr name="mf_chip_color_value_text" format="color" />
+        <attr name="mf_chip_text_size" format="dimension"/>
+        <attr name="mf_chip_background_color" format="color"/>
+        <attr name="mf_chip_icon_make_accessible" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MFChipText">
+        <attr name="mf_chip_text_value" format="string" />
+        <attr name="mf_chip_text_icon" format="reference" />
+        <attr name="mf_chip_text_color" format="color" />
+        <attr name="mf_chip_text_text_size" format="dimension"/>
+        <attr name="mf_chip_text_content_description" format="string"/>
+        <attr name="mf_chip_text_background_color" format="color"/>
+        <attr name="mf_chip_text_reverse" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MFMarkerSimple">
+        <attr name="mf_marker_simple_day" format="string" />
+        <attr name="mf_marker_simple_month" format="string" />
+    </declare-styleable>
+</resources>

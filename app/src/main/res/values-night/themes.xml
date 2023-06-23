@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MFDistrics" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">?attr/primary</item>
+        <item name="colorPrimaryVariant">?attr/primary_variant</item>
+        <item name="colorOnPrimary">?attr/onPrimary</item>
+        <item name="background">?attr/primary_background</item>
+        <item name="colorOnBackground">?attr/primary_onBackground</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">?attr/secondary</item>
+        <item name="colorSecondaryVariant">?attr/secondary_variant</item>
+        <item name="colorOnSecondary">?attr/onSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/transparent_bg</item>
+        <!-- Customize your theme here. -->
+
+        <item name="primary">@color/primary_dark</item>
+        <item name="onPrimary">@color/onPrimary_dark</item>
+        <item name="primary_variant">@color/primaryVariant_dark</item>
+        <item name="primary_text">@color/primaryText_dark</item>
+        <item name="primary_variant_text">@color/primaryVariantText_dark</item>
+        <item name="primary_background">@color/background_dark</item>
+        <item name="primary_onBackground">@color/onBackground_dark</item>
+        <item name="primary_onBackground_variant">@color/onBackground_variant_dark</item>
+        <item name="secondary">@color/secondary_dark</item>
+        <item name="onSecondary">@color/onSecondary_dark</item>
+        <item name="secondary_variant">@color/secondary_variant_dark</item>
+        <item name="secondary_text">@color/secondary_text_dark</item>
+        <item name="secondary_variant_text">@color/secondaryVariantText_dark</item>
+        <item name="ternary_text">@color/ternary_text_dark</item>
+        <item name="transparent_bg">@android:color/transparent</item>
+    </style>
+</resources>

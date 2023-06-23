@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--  MFModalBottomSheet  -->
+    <dimen name="mf_bottom_sheet_round_size">5sp</dimen>
+
+    <!--  MFImageView  -->
+    <dimen name="mf_image_view_xs">10dp</dimen>
+    <dimen name="mf_image_view_s">100dp</dimen>
+    <dimen name="mf_image_view_m">120dp</dimen>
+    <dimen name="mf_image_view_l">140dp</dimen>
+    <dimen name="mf_image_view_xl">150dp</dimen>
+
+    <!--  MFButtonTextIcon  -->
+    <dimen name="mf_button_text_icon_padding_vertical_s">10dp</dimen>
+    <dimen name="mf_button_text_icon_padding_vertical_m">20dp</dimen>
+    <dimen name="mf_button_text_icon_margin_vertical_s">10dp</dimen>
+    <dimen name="mf_button_text_icon_margin_vertical_m">20dp</dimen>
+
+    <dimen name="mf_button_text_s">12sp</dimen>
+    <dimen name="mf_button_text_m">15sp</dimen>
+    <dimen name="mf_button_text_l">16sp</dimen>
+    <dimen name="mf_button_text_xl">18sp</dimen>
+
+    <dimen name="mf_button_width_s">100dp</dimen>
+    <dimen name="mf_button_width_m">150dp</dimen>
+    <dimen name="mf_button_width_l">260dp</dimen>
+    <dimen name="mf_button_width_xl">350dp</dimen>
+
+    <dimen name="mf_button_height_s">40dp</dimen>
+    <dimen name="mf_button_height_m">45dp</dimen>
+    <dimen name="mf_button_height_l">55dp</dimen>
+    <dimen name="mf_button_height_xl">60dp</dimen>
+
+    <dimen name="mf_button_round_size">15dp</dimen>
+
+    <!--  MFLabel  -->
+    <dimen name="mf_label_text_s">10sp</dimen>
+    <dimen name="mf_label_text_m">19sp</dimen>
+    <dimen name="mf_label_text_l">30sp</dimen>
+    <dimen name="mf_label_text_xl">50sp</dimen>
+
+    <!--  MFCHip  -->
+    <dimen name="mf_chip_width_s">200dp</dimen>
+    <dimen name="mf_chip_width_m">250dp</dimen>
+    <dimen name="mf_chip_width_l">280dp</dimen>
+    <dimen name="mf_chip_width_xl">300dp</dimen>
+    <dimen name="mf_chip_height_s">150dp</dimen>
+    <dimen name="mf_chip_height_m">170dp</dimen>
+    <dimen name="mf_chip_height_l">180dp</dimen>
+    <dimen name="mf_chip_height_xl">190dp</dimen>
+    <dimen name="mf_chip_text_s">10dp</dimen>
+    <dimen name="mf_chip_text_m">16dp</dimen>
+    <dimen name="mf_chip_text_l">25dp</dimen>
+    <dimen name="mf_chip_text_xl">28dp</dimen>
+
+
+    <!--  MFCHipText  -->
+    <dimen name="mf_chip_text_width_s">200dp</dimen>
+    <dimen name="mf_chip_text_width_m">250dp</dimen>
+    <dimen name="mf_chip_text_width_l">280dp</dimen>
+    <dimen name="mf_chip_text_width_xl">300dp</dimen>
+    <dimen name="mf_chip_text_height_s">150dp</dimen>
+    <dimen name="mf_chip_text_height_m">170dp</dimen>
+    <dimen name="mf_chip_text_height_l">180dp</dimen>
+    <dimen name="mf_chip_text_height_xl">190dp</dimen>
+    <dimen name="mf_chip_text_text_s">10dp</dimen>
+    <dimen name="mf_chip_text_text_m">16dp</dimen>
+    <dimen name="mf_chip_text_text_l">25dp</dimen>
+    <dimen name="mf_chip_text_text_xl">28dp</dimen>
+
+    <!--  MFImageView  -->
+    <dimen name="mf_image_view_width_xxs">20dp</dimen>
+    <dimen name="mf_image_view_width_xs">30dp</dimen>
+    <dimen name="mf_image_view_width_s">80dp</dimen>
+    <dimen name="mf_image_view_width_m">150dp</dimen>
+    <dimen name="mf_image_view_width_l">200dp</dimen>
+    <dimen name="mf_image_view_width_xl">300dp</dimen>
+    <dimen name="mf_image_view_heigth_xxs">20dp</dimen>
+    <dimen name="mf_image_view_heigth_xs">30dp</dimen>
+    <dimen name="mf_image_view_heigth_s">80dp</dimen>
+    <dimen name="mf_image_view_heigth_m">150dp</dimen>
+    <dimen name="mf_image_view_heigth_l">200dp</dimen>
+    <dimen name="mf_image_view_heigth_xl">300dp</dimen>
+    <dimen name="mf_image_view_landscape_width_l">450dp</dimen>
+    <dimen name="mf_image_view_landscape_heigth_l">380dp</dimen>
+
+
+    <!--  MFMaps  -->
+    <dimen name="mf_maps_width_s">100dp</dimen>
+    <dimen name="mf_maps_width_m">150dp</dimen>
+    <dimen name="mf_maps_width_l">180dp</dimen>
+    <dimen name="mf_maps_width_xl">300dp</dimen>
+    <dimen name="mf_maps_height_s">100dp</dimen>
+    <dimen name="mf_maps_height_m">150dp</dimen>
+    <dimen name="mf_maps_height_l">180dp</dimen>
+    <dimen name="mf_maps_height_xl">300dp</dimen>
+    <dimen name="mf_maps_round_size">20dp</dimen>
+
+
+
+    <!--  HomeActivity  -->
+    <dimen name="home_activity_horizontal_margin">10dp</dimen>
+    <dimen name="home_activity_vertical_margin">5dp</dimen>
+    <dimen name="home_activity_back_arrow_width">40dp</dimen>
+    <dimen name="home_activity_back_arrow_height">40dp</dimen>
+    <dimen name="home_activity_place_width">300dp</dimen>
+    <dimen name="home_activity_place_height">300dp</dimen>
+
+
+    <!--  MFPopUp  -->
+    <dimen name="mf_popup_horizontal_margin">10dp</dimen>
+    <dimen name="mf_popup_vertical_margin">5dp</dimen>
+
+    <!--  MFPager  -->
+    <dimen name="mf_pager_section_horizontal_margin">10dp</dimen>
+    <dimen name="mf_pager_section_vertical_margin">8dp</dimen>
+    <dimen name="mf_pager_section_text_day">20dp</dimen>
+</resources>

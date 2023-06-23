@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/mf_chip_text_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="4">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                android:id="@+id/mf_chip_text_icon"
+                style="@style/MFImageView.smallicon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:mf_image_draw="@drawable/home_activity_place_icon"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+            android:id="@+id/mf_chip_text_value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:mf_label_formattedText="0"/>
+    </LinearLayout>
+</merge>

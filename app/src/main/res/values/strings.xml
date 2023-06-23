@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MFDistricts</string>
+
+    <!-- MFMaps   -->
+    <string name="google_maps_key"></string>
+    <!--  MFModalBottomSheet  -->
+    <string name="mf_modal_bottom_sheet_booking_trip_accept_label">Aceptar</string>
+    <string name="mf_modal_bottom_sheet_booking_trip_denied_label">Denegar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="mf_pois_fragment_title">MFList</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- MFTabSection -->
+    <string name="mf_tab_section_empty">Listado vacío</string>
+
+</resources>

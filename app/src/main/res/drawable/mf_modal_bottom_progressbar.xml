@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <corners
+                android:topRightRadius="@dimen/mf_bottom_sheet_round_size"
+                android:topLeftRadius="@dimen/mf_bottom_sheet_round_size"/>
+            <solid android:color="?background"/>
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:topRightRadius="@dimen/mf_bottom_sheet_round_size" android:topLeftRadius="@dimen/mf_bottom_sheet_round_size"/>
+                <solid android:color="?attr/primary_onBackground_variant"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>

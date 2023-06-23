@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primary" format="color"/>
+    <attr name="onPrimary" format="color"/>
+    <attr name="primary_variant" format="color"/>
+    <attr name="primary_text" format="color"/>
+    <attr name="primary_variant_text" format="color"/>
+    <attr name="primary_background" format="color"/>
+    <attr name="primary_onBackground" format="color"/>
+    <attr name="primary_onBackground_variant" format="color"/>
+    <attr name="secondary" format="color"/>
+    <attr name="onSecondary" format="color"/>
+    <attr name="secondary_variant" format="color"/>
+    <attr name="secondary_text" format="color"/>
+    <attr name="secondary_variant_text" format="color"/>
+    <attr name="ternary_text" format="color"/>
+    <attr name="transparent_bg" format="color"/>
+</resources>
