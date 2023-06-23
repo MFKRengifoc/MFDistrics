@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.manoffocus.mfdistricts.BuildConfig
 import com.google.maps.android.SphericalUtil
 import com.manoffocus.mfdistricts.R
 import com.manoffocus.mfdistricts.databinding.MfMapsFragmentBinding
@@ -78,7 +79,7 @@ class MFMaps : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         try {
-            api_key = getString(R.string.google_maps_key)
+            api_key = BuildConfig.GOOGLE_API_KEY
         } catch (e: Exception){
             Log.d(TAG, "onViewCreated: ${e.message}")
         }
