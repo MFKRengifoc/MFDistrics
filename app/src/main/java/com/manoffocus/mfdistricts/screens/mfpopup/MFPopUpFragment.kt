@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.manoffocus.mfdistricts.R
+import com.manoffocus.mfdistricts.components.mfmaps.MFMapsMarker
+import com.manoffocus.mfdistricts.components.mfmaps.MFMarkerType
 import com.manoffocus.mfdistricts.components.mfmaps.MapsContract
 import com.manoffocus.mfdistricts.components.mfmaps.MapsPresenter
 import com.manoffocus.mfdistricts.components.mfplayer.MFPlayer
@@ -111,15 +113,24 @@ class MFPopUpFragment : DialogFragment(),
     override fun onFragmentMapReady(googleMap: GoogleMap) {
         mfPopUpFragmentViewModel.getDistrictDataById(idPoi) { poi ->
             poi?.let { p ->
-                mapsBasePresenter?.addPoisTopMap(listOf(p))
-                mapsBasePresenter?.setCameraByLocation(LatLng(p.latitude, p.longitude), null)
+                val icon = MFMapsMarker(requireContext())
+                icon.getBitMapOfUrlImage(p.category.marker.url, icon.layoutParams.width, icon.layoutParams.height){ bitmap ->
+                    bitmap?.let {
+                        mapsBasePresenter?.addPoiMarkerToMap(p, it)
+                        mapsBasePresenter?.setCameraByLocation(LatLng(p.latitude, p.longitude), null)
+                    }
+                }
             }
         }
     }
 
-    override fun onMarkerClicked(idPoi: Int) {
+    override fun onMarkerClicked(marker: MFMarkerType<Int>, selected: Boolean) {
+
     }
     override fun openPoi(idPoi: Int) {
+    }
+
+    override fun openEvent(eventId: Int) {
     }
 
     companion object {

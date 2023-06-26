@@ -2,6 +2,7 @@ package com.manoffocus.mfdistricts.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextThemeWrapper
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.manoffocus.mfdistricts.R
 import com.manoffocus.mfdistricts.components.interfaces.OnPoiListener
+import com.manoffocus.mfdistricts.components.mfmaps.MFMapsMarker
 import com.manoffocus.mfdistricts.databinding.ActivityHomeBinding
 import com.manoffocus.mfdistricts.screens.mfmaps.MFMapsFragment
 import com.manoffocus.mfdistricts.screens.mfpois.MFPoisFragment

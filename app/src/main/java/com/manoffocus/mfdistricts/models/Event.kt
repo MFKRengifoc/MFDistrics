@@ -12,7 +12,7 @@ data class Event(
     val latitude: String,
     val like_it: Boolean,
     val longitude: String,
-    val place: String,
+    val place: String?,
     val poi: Poi,
     val title: String,
     val to_datetime: String

@@ -52,5 +52,8 @@
     <color name="mf_player_background">#575757</color>
     <color name="mf_tab_color_selected">@color/secondary_variant_dark</color>
 
+    <color name="mf_maps_marker_text_color">#ECECEC</color>
+    <color name="mf_maps_marker_icon_color">@color/secondary_variant_dark</color>
+
 
 </resources>

@@ -12,9 +12,9 @@ import com.manoffocus.mfdistricts.models.Poi
 
 interface MapsContract {
     interface BasePresenter {
-        fun addPoisTopMap(listOfPois: List<Poi>)
-        fun addEventsTopMap(listOfEvents: List<Event>)
-        fun addMarkerToMapById(idPoi: Int)
+        fun addPoiMarkerToMap(poi: Poi, bitmap: Bitmap)
+        fun addEventMarkerToMap(event: Event, bitmap: Bitmap)
+        fun showInfoMarker(marker: MFMarkerType<Int>, boxBitmap: Bitmap, iconBitmap: Bitmap)
         fun drawPolygon(coordinates: List<LatLng>)
         fun moveCameraTo(coordinates: List<LatLng>)
         fun setCameraByLocation(latLng: LatLng, zoom: Float?)
@@ -24,15 +24,16 @@ interface MapsContract {
     interface Presenter : BasePresenter, MapDrawing, MapsListener {
     }
     interface MapsPresenter : BasePresenter {
-        fun addMarkerToMapByBitMap(bitmap: Bitmap, coors: LatLng, title: String) : Marker
-        fun restoreMarker(idPoi: Int)
+        fun addMarkerToMapByBitMap(bitmap: Bitmap, coors: LatLng, title: String, zindex: Float) : Marker
+        fun restoreMarker()
     }
     interface MapDrawing {
         fun onFragmentMapReady(googleMap: GoogleMap)
     }
     interface MapsListener {
-        fun onMarkerClicked(idPoi: Int)
+        fun onMarkerClicked(marker: MFMarkerType<Int>, selected: Boolean)
         fun openPoi(idPoi: Int)
+        fun openEvent(eventId: Int)
     }
     interface CompleteView: MapDrawing, MapsListener {
         val fragmentMan: FragmentManager

@@ -8,7 +8,7 @@ import java.util.Locale
 
 class Utils {
     companion object {
-        const val BASE_FORMAT = "yyyy-MM-dd HH:mm:ss"
+        const val BASE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssXXX"
         @SuppressLint("SimpleDateFormat")
         fun getFormattedDate(): String{
             return SimpleDateFormat(BASE_FORMAT, Locale("es_ES")).format(Calendar.getInstance().time)

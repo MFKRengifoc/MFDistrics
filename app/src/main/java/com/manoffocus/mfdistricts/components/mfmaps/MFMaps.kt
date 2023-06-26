@@ -3,16 +3,12 @@ package com.manoffocus.mfdistricts.components.mfmaps
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
 import com.example.easywaylocation.draw_path.DirectionUtil
 import com.example.easywaylocation.draw_path.PolyLineDataBean
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -44,12 +40,13 @@ class MFMaps : Fragment(),
     private val binding get() = _binding!!
     private lateinit var gmap : GoogleMap
     private var wayPoints : ArrayList<LatLng> = ArrayList()
-    private var directionUtil : DirectionUtil? = null
     private var basePresenter: MapsContract.Presenter? = null
     private var defaultZoom = 15F
-    private var poiMarkersMap: ArrayList<Pair<Marker, Poi>> = arrayListOf()
-    private var eventMarkersMap: ArrayList<Pair<Marker, Event>> = arrayListOf()
-    private var selectedMarker: Pair<Marker, Poi>? = null
+    private var defaultZindex = 0F
+    private var markers: ArrayList<Pair<MFMarkerType<Int>, Marker>> = arrayListOf()
+    private var selectedMarker: Pair<MFMarkerType<Int>, Marker>? = null
+    private var overlayMarker: Pair<MFMarkerType<Int>, Marker>? = null
+    private var floatingMarker: Pair<MFMarkerType<Int>, Marker>? = null
 
     @SuppressLint("PotentialBehaviorOverride")
     private val callback = OnMapReadyCallback { googleMap ->
@@ -116,78 +113,49 @@ class MFMaps : Fragment(),
         gmap.clear()
     }
 
-    override fun addPoisTopMap(listOfPois: List<Poi>) {
-        listOfPois.map {  poi ->
-            val coors = LatLng(poi.latitude, poi.longitude)
-            val icon = poi.category.marker
-            val width = icon.width.toInt()
-            val height = icon.height.toInt()
-            getBitMapOfUrlImage(icon.url, width, height){ bitmap ->
-                bitmap?.let {
-                    val marker = addMarkerToMapByBitMap(bitmap, coors, poi.name)
-                    poiMarkersMap.add(Pair(marker, poi))
-                }
+    override fun addPoiMarkerToMap(poi: Poi, bitmap: Bitmap) {
+        val latLng = LatLng(poi.latitude, poi.longitude)
+        markers.add(Pair(MFMarkerType.PoiMarker(poi.id), addMarkerToMapByBitMap(bitmap, latLng, "", defaultZindex)))
+    }
+
+    override fun addEventMarkerToMap(event: Event, bitmap: Bitmap) {
+        val latLng = LatLng(event.latitude.toDouble(), event.longitude.toDouble())
+        markers.add(Pair(MFMarkerType.EventMarker(event.id), addMarkerToMapByBitMap(bitmap, latLng, "", defaultZindex)))
+    }
+
+    override fun showInfoMarker(marker: MFMarkerType<Int>, boxBitmap: Bitmap, iconBitmap: Bitmap) {
+        val targetMarker = markers.find { pair ->
+            pair.first.id == marker.id
+        }
+        targetMarker?.let { target ->
+            selectedMarker?.let { selected ->
+                val coors = LatLng(target.second.position.latitude, target.second.position.longitude)
+                val newCoors = SphericalUtil.computeOffset(coors, 100.0, 0.0)
+                floatingMarker = Pair(marker, addMarkerToMapByBitMap(boxBitmap, newCoors, "", 10F))
+                overlayMarker = Pair(marker, addMarkerToMapByBitMap(iconBitmap, coors, "", 10F))
+                selected.second.alpha = 0F
             }
         }
     }
 
-    override fun addEventsTopMap(listOfEvents: List<Event>) {
-        listOfEvents.map {  event ->
-            val coors = LatLng(event.latitude.toDouble(), event.longitude.toDouble())
-            val icon = event.category.icon
-            val width = event.category.icon.width.toInt()
-            val height = event.category.icon.height.toInt()
-            getBitMapOfUrlImage(icon.url, width, height){ bitmap ->
-                bitmap?.let {
-                    val marker = addMarkerToMapByBitMap(bitmap, coors, event.title)
-                    eventMarkersMap.add(Pair(marker, event))
-                }
-            }
-        }
-    }
-
-    override fun addMarkerToMapById(idPoi: Int) {
-        val poi = poiMarkersMap.find { it.second.id == idPoi }
-        val indexed = poiMarkersMap.indexOf(poi)
-        poi?.let { p ->
-            val markerUrl = if (selectedMarker == null) p.second.category.icon.url else poi.second.category.marker.url
-            val w = p.second.category.marker.width.toInt()
-            val h = p.second.category.marker.height.toInt()
-            val coors = LatLng(p.second.latitude, p.second.longitude)
-            getBitMapOfUrlImage(markerUrl, w, h){ bitmap ->
-                bitmap?.let {
-                    val marker = addMarkerToMapByBitMap(it, coors, p.second.name)
-                    poi.first.remove()
-                    poiMarkersMap[indexed] = Pair(marker, poi.second)
-                    selectedMarker = Pair(marker, poi.second)
-                }
-            }
-        }
-
-    }
-
-    override fun addMarkerToMapByBitMap(bitmap: Bitmap, coors: LatLng, title: String) : Marker {
-        return gmap.addMarker(
+    override fun addMarkerToMapByBitMap(bitmap: Bitmap, coors: LatLng, title: String, zindex: Float) : Marker {
+        val marker = gmap.addMarker(
             MarkerOptions().position(coors).icon(
                 BitmapDescriptorFactory.fromBitmap(bitmap)
             ).title(title)) as Marker
+        marker.zIndex = zindex
+        return marker
     }
 
-    override fun restoreMarker(idPoi: Int) {
-        val poi = poiMarkersMap.find { it.second.id == idPoi }
-        val indexed = poiMarkersMap.indexOf(poi)
-        poi?.let { p ->
-            val markerUrl = p.second.category.marker.url
-            val w = p.second.category.icon.width.toInt()
-            val h = p.second.category.icon.height.toInt()
-            val coors = LatLng(p.second.latitude, p.second.longitude)
-            getBitMapOfUrlImage(markerUrl, w, h){ bitmap ->
-                bitmap?.let {
-                    val marker = addMarkerToMapByBitMap(it, coors, p.second.name)
-                    poi.first.remove()
-                    poiMarkersMap[indexed] = Pair(marker, poi.second)
-                }
-            }
+    override fun restoreMarker() {
+        selectedMarker?.let { selected ->
+            selected.second.alpha = 1F
+        }
+        floatingMarker?.let { floating ->
+            floating.second.remove()
+        }
+        overlayMarker?.let { overlay ->
+            overlay.second.remove()
         }
     }
     override fun drawPolygon(coordinates: List<LatLng>){
@@ -234,29 +202,33 @@ class MFMaps : Fragment(),
     }
 
     override fun onMapClick(point: LatLng) {
-        Log.d(TAG, "onMapClick: ${point}")
+        restoreMarker()
+        selectedMarker = null
+        floatingMarker = null
+        overlayMarker = null
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
-        val targetMarker = poiMarkersMap.find { it.first == marker }
-        var consume = false
-        targetMarker?.let { target ->
-            selectedMarker.let { selected ->
-                if (selected != null) {
-                    if (selected.first != target.first){
-                        restoreMarker(selected.second.id)
-                        selectedMarker = null
-                    } else {
-                        basePresenter?.openPoi(target.second.id)
-                    }
+        val target = markers.find { pair ->
+            pair.second == marker
+        }
+        target?.let { tar ->
+            selectedMarker?.let { selected ->
+                if (selected.first.id != tar.first.id){
+                    restoreMarker()
+                    selectedMarker = tar
+                    basePresenter?.onMarkerClicked(tar.first, false)
                 }
             }
             if (selectedMarker == null){
-                consume = true
+                selectedMarker = tar
+                basePresenter?.onMarkerClicked(tar.first, false)
             }
         }
-        if (consume){
-            basePresenter?.onMarkerClicked(targetMarker!!.second.id)
+        floatingMarker?.let { pair ->
+            if (pair.second == marker){
+                basePresenter?.onMarkerClicked(pair.first, true)
+            }
         }
         return false
     }
@@ -271,7 +243,7 @@ class MFMaps : Fragment(),
         polyLineDetailsMap: HashMap<String, PolyLineDataBean>,
         polyLineDetailsArray: ArrayList<PolyLineDataBean>
     ) {
-        directionUtil?.drawPath(WAYPOINTS_TAG)
+
     }
 
     override fun onCameraMoveStarted(movementAction: Int) {
@@ -286,31 +258,14 @@ class MFMaps : Fragment(),
     override fun onCameraIdle() {
     }
 
-    private fun getBitMapOfUrlImage(imageUrl: String, width: Int, height: Int, callback: (Bitmap?) -> Unit){
-        Glide.with(requireContext())
-            .asBitmap()
-            .load(imageUrl)
-            .into(object : CustomTarget<Bitmap>(width, height) {
-                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                    callback(resource)
-                }
-                override fun onLoadCleared(placeholder: Drawable?) {
-                    callback(null)
-                }
-            })
-    }
     companion object {
         const val TAG = "MapsFragment"
-        const val INIT_LAT = "init_lat"
-        const val INIT_LONG = "init_long"
-        val WAYPOINTS_TAG = TAG.lowercase() + "_waypoints_tag"
-        fun newInstance(latLng: LatLng): MFMaps {
-            val bundle = Bundle()
-            bundle.putDouble(INIT_LAT, latLng.latitude)
-            bundle.putDouble(INIT_LONG, latLng.longitude)
-            val fragment = MFMaps()
-            fragment.arguments = bundle
-            return fragment
+        fun newInstance(): MFMaps {
+            return MFMaps()
         }
     }
+}
+sealed class MFMarkerType<T>(var id: T){
+    class PoiMarker<T>(id: T): MFMarkerType<T>(id)
+    class EventMarker<T>(id: T) : MFMarkerType<T>(id)
 }

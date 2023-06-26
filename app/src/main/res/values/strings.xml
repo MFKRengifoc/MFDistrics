@@ -14,4 +14,7 @@
     <!-- MFTabSection -->
     <string name="mf_tab_section_empty">Listado vacío</string>
 
+    <!--  MFMapsBoxMarker  -->
+    <string name="mf_marker_more">Ver más</string>
+
 </resources>

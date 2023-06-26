@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:padding="@dimen/mf_maps_marker_horizontal_margin">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/mf_maps_marker_width_m"
+            android:layout_height="@dimen/mf_maps_marker_height_m"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="3"
+            android:padding="@dimen/mf_maps_marker_vertical_margin">
+            <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                android:id="@+id/mf_maps_marker_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>

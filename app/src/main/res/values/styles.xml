@@ -167,4 +167,8 @@
         <item name="android:layout_height">@dimen/mf_chip_text_height_xl</item>
         <item name="mf_chip_text_size">@dimen/mf_chip_text_text_xl</item>
     </style>
+    <style name="MFMapsMarker" parent="Theme.MFDistrics">
+        <item name="android:layout_width">@dimen/mf_maps_marker_width_m</item>
+        <item name="android:layout_height">@dimen/mf_maps_marker_height_m</item>
+    </style>
 </resources>

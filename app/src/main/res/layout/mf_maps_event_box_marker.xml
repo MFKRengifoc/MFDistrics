@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:padding="@dimen/mf_maps_marker_horizontal_margin">
+        <LinearLayout
+            android:layout_width="@dimen/mf_maps_box_event_marker_width_m"
+            android:layout_height="@dimen/mf_maps_box_event_marker_height_m"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="3"
+            android:background="@drawable/mf_maps_marker_bg"
+            android:padding="@dimen/mf_maps_marker_vertical_margin">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center">
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_maps_marker_title"
+                    style="@style/MFLabel.medium"
+                    android:layout_width="match_parent"
+                    app:mf_label_formattedText="Title"
+                    app:mf_label_alignment_text="center"
+                    android:layout_gravity="center"
+                    app:mf_label_color="@color/mf_maps_marker_text_color" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/mf_maps_marker_horizontal_margin">
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_maps_marker_time"
+                    style="@style/MFLabel.small"
+                    android:layout_width="@dimen/mf_label_width_m"
+                    app:mf_label_formattedText="22:00"
+                    app:mf_label_alignment_text="center"
+                    app:mf_label_color="@color/mf_maps_marker_text_color"/>
+                <com.manoffocus.mfdistricts.components.mfimageview.MFImageView
+                    android:id="@+id/mf_marker_icon"
+                    style="@style/MFImageView.icon"
+                    app:mf_image_draw="@drawable/home_activity_place_icon"
+                    android:layout_marginHorizontal="@dimen/mf_maps_marker_horizontal_margin"
+                    app:mf_image_tint_color="@color/mf_maps_marker_icon_color"/>
+                <com.manoffocus.mfdistricts.components.mflabel.MFLabel
+                    android:id="@+id/mf_maps_marker_place"
+                    style="@style/MFLabel.small"
+                    app:mf_label_formattedText="Plaza de las artes"
+                    app:mf_label_alignment_text="center"
+                    app:mf_label_color="@color/mf_maps_marker_icon_color"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+</merge>

@@ -57,8 +57,19 @@
         <attr name="mf_chip_text_reverse" format="boolean"/>
     </declare-styleable>
 
-    <declare-styleable name="MFMarkerSimple">
-        <attr name="mf_marker_simple_day" format="string" />
-        <attr name="mf_marker_simple_month" format="string" />
+    <declare-styleable name="MFMapsMarker">
+        <attr name="mf_marker_icon_url" format="string" />
+    </declare-styleable>
+    <declare-styleable name="MFMapsEventMarker">
+        <attr name="mf_marker_event_day" format="string" />
+        <attr name="mf_marker_event_month" format="string" />
+    </declare-styleable>
+    <declare-styleable name="MFMapsEventBoxMarker">
+        <attr name="mf_marker_event_box_title" format="string" />
+        <attr name="mf_marker_event_box_time" format="string" />
+        <attr name="mf_marker_event_box_place" format="string" />
+    </declare-styleable>
+    <declare-styleable name="MFMapsBoxMarker">
+        <attr name="mf_marker_box_title" format="string" />
     </declare-styleable>
 </resources>

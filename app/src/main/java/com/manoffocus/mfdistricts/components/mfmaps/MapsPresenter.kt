@@ -1,5 +1,6 @@
     package com.manoffocus.mfdistricts.components.mfmaps
 
+    import android.graphics.Bitmap
     import android.util.Log
     import com.google.android.gms.maps.GoogleMap
     import com.google.android.gms.maps.model.*
@@ -19,16 +20,13 @@
                 Log.d(TAG, "ERROR: ${e.message}")
             }
         }
-        override fun addPoisTopMap(listOfPois: List<Poi>) {
-            mapsFragment.addPoisTopMap(listOfPois)
+
+        override fun addPoiMarkerToMap(poi: Poi, bitmap: Bitmap) {
+            mapsFragment.addPoiMarkerToMap(poi, bitmap)
         }
 
-        override fun addEventsTopMap(listOfEvents: List<Event>) {
-            mapsFragment.addEventsTopMap(listOfEvents)
-        }
-
-        override fun addMarkerToMapById(idPoi: Int) {
-            mapsFragment.addMarkerToMapById(idPoi)
+        override fun addEventMarkerToMap(event: Event, bitmap: Bitmap) {
+            mapsFragment.addEventMarkerToMap(event, bitmap)
         }
 
         override fun drawPolygon(coordinates: List<LatLng>) {
@@ -40,8 +38,12 @@
             mapsFragment.moveCameraTo(coordinates)
         }
 
-        override fun onMarkerClicked(idPoi: Int) {
-            mView.onMarkerClicked(idPoi)
+        override fun onMarkerClicked(marker: MFMarkerType<Int>, selected: Boolean) {
+            mView.onMarkerClicked(marker, selected)
+        }
+
+        override fun showInfoMarker(marker: MFMarkerType<Int>, boxBitmap: Bitmap, iconBitmap: Bitmap) {
+            mapsFragment.showInfoMarker(marker, boxBitmap, iconBitmap)
         }
 
         override fun onFragmentMapReady(googleMap: GoogleMap) {
@@ -50,6 +52,10 @@
 
         override fun openPoi(idPoi: Int) {
             mView.openPoi(idPoi)
+        }
+
+        override fun openEvent(eventId: Int) {
+            mView.openEvent(eventId)
         }
 
         override fun setCameraByLocation(latLng: LatLng, zoom: Float?) {

@@ -1,6 +1,7 @@
 package com.manoffocus.mfdistricts.components.mfimageview
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
@@ -12,6 +13,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.manoffocus.mfdistricts.R
 import com.manoffocus.mfdistricts.databinding.MfImageViewBinding
 
@@ -130,6 +133,20 @@ class MFImageView : ConstraintLayout {
         ResourcesCompat.getDrawable(resources, R.drawable.mf_imageview_bg_error_loading_min, context.theme)
     private fun getDefaultPlaceholderDrawable() =
         ResourcesCompat.getDrawable(resources, R.drawable.mf_imageview_loading_min, context.theme)
+
+    fun getBitMapOfUrlImage(imageUrl: String, width: Int, height: Int, callback: (Bitmap?) -> Unit){
+        Glide.with(context  )
+            .asBitmap()
+            .load(imageUrl)
+            .into(object : CustomTarget<Bitmap>(width, height) {
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    callback(resource)
+                }
+                override fun onLoadCleared(placeholder: Drawable?) {
+                    callback(null)
+                }
+            })
+    }
 
     fun spToPx(sp: Float): Int {
         return (sp / resources.displayMetrics.density).toInt()

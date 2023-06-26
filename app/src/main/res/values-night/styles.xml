@@ -139,4 +139,28 @@
         <item name="android:layout_width">@dimen/mf_maps_width_xl</item>
         <item name="android:layout_height">@dimen/mf_maps_height_xl</item>
     </style>
+    <style name="MFChipText.small" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_text_width_s</item>
+        <item name="android:layout_height">@dimen/mf_chip_text_height_s</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_text_s</item>
+    </style>
+    <style name="MFChipText.medium" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_text_width_m</item>
+        <item name="android:layout_height">@dimen/mf_chip_text_height_m</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_text_m</item>
+    </style>
+    <style name="MFChipText.large" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_text_width_l</item>
+        <item name="android:layout_height">@dimen/mf_chip_text_height_l</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_text_l</item>
+    </style>
+    <style name="MFChipText.extralarge" parent="MFChip">
+        <item name="android:layout_width">@dimen/mf_chip_text_width_xl</item>
+        <item name="android:layout_height">@dimen/mf_chip_text_height_xl</item>
+        <item name="mf_chip_text_size">@dimen/mf_chip_text_text_xl</item>
+    </style>
+    <style name="MFMapsMarker" parent="Theme.MFDistrics">
+        <item name="android:layout_width">@dimen/mf_maps_marker_width_m</item>
+        <item name="android:layout_height">@dimen/mf_maps_marker_height_m</item>
+    </style>
 </resources>

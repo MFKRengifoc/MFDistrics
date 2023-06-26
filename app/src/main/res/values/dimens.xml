@@ -45,6 +45,15 @@
     <dimen name="mf_label_text_l">30sp</dimen>
     <dimen name="mf_label_text_xl">50sp</dimen>
 
+    <dimen name="mf_label_width_s">20sp</dimen>
+    <dimen name="mf_label_width_m">30sp</dimen>
+    <dimen name="mf_label_width_l">40sp</dimen>
+    <dimen name="mf_label_width_xl">50sp</dimen>
+    <dimen name="mf_label_height_s">10sp</dimen>
+    <dimen name="mf_label_height_m">20sp</dimen>
+    <dimen name="mf_label_height_l">30sp</dimen>
+    <dimen name="mf_label_height_xl">40sp</dimen>
+
     <!--  MFCHip  -->
     <dimen name="mf_chip_width_s">200dp</dimen>
     <dimen name="mf_chip_width_m">250dp</dimen>
@@ -112,7 +121,6 @@
     <dimen name="home_activity_place_width">300dp</dimen>
     <dimen name="home_activity_place_height">300dp</dimen>
 
-
     <!--  MFPopUp  -->
     <dimen name="mf_popup_horizontal_margin">10dp</dimen>
     <dimen name="mf_popup_vertical_margin">5dp</dimen>
@@ -121,4 +129,46 @@
     <dimen name="mf_pager_section_horizontal_margin">10dp</dimen>
     <dimen name="mf_pager_section_vertical_margin">8dp</dimen>
     <dimen name="mf_pager_section_text_day">20dp</dimen>
+
+    <!--  MFMapsMarker  -->
+    <dimen name="mf_maps_marker_horizontal_margin">5dp</dimen>
+    <dimen name="mf_maps_marker_vertical_margin">5dp</dimen>
+    <dimen name="mf_maps_marker_width_s">30dp</dimen>
+    <dimen name="mf_maps_marker_width_m">45dp</dimen>
+    <dimen name="mf_maps_marker_width_l">60dp</dimen>
+    <dimen name="mf_maps_marker_width_xl">70dp</dimen>
+    <dimen name="mf_maps_marker_height_s">30dp</dimen>
+    <dimen name="mf_maps_marker_height_m">45dp</dimen>
+    <dimen name="mf_maps_marker_height_l">60dp</dimen>
+    <dimen name="mf_maps_marker_height_xl">70dp</dimen>
+
+    <dimen name="mf_maps_event_marker_width_s">55dp</dimen>
+    <dimen name="mf_maps_event_marker_width_m">60dp</dimen>
+    <dimen name="mf_maps_event_marker_width_l">70dp</dimen>
+    <dimen name="mf_maps_event_marker_width_xl">80dp</dimen>
+    <dimen name="mf_maps_event_marker_height_s">55dp</dimen>
+    <dimen name="mf_maps_event_marker_height_m">60dp</dimen>
+    <dimen name="mf_maps_event_marker_height_l">70dp</dimen>
+    <dimen name="mf_maps_event_marker_height_xl">80dp</dimen>
+
+    <dimen name="mf_maps_box_event_marker_width_s">100dp</dimen>
+    <dimen name="mf_maps_box_event_marker_width_m">230dp</dimen>
+    <dimen name="mf_maps_box_event_marker_width_l">120dp</dimen>
+    <dimen name="mf_maps_box_event_marker_width_xl">140dp</dimen>
+    <dimen name="mf_maps_box_event_marker_height_s">50dp</dimen>
+    <dimen name="mf_maps_box_event_marker_height_m">100dp</dimen>
+    <dimen name="mf_maps_box_event_marker_height_l">60dp</dimen>
+    <dimen name="mf_maps_box_event_marker_height_xl">70dp</dimen>
+
+    <dimen name="mf_maps_box_marker_width_s">100dp</dimen>
+    <dimen name="mf_maps_box_marker_width_m">220dp</dimen>
+    <dimen name="mf_maps_box_marker_width_l">140dp</dimen>
+    <dimen name="mf_maps_box_marker_width_xl">150dp</dimen>
+    <dimen name="mf_maps_box_marker_height_s">50dp</dimen>
+    <dimen name="mf_maps_box_marker_height_m">100dp</dimen>
+    <dimen name="mf_maps_box_marker_height_l">70dp</dimen>
+    <dimen name="mf_maps_box_marker_height_xl">75dp</dimen>
+
+
+
 </resources>
