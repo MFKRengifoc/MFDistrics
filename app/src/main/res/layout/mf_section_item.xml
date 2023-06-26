@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -24,22 +25,29 @@
             <com.manoffocus.mfdistricts.components.mflabel.MFLabel
                 android:id="@+id/mf_section_day"
                 style="@style/MFLabel.medium"
+                android:layout_width="35dp"
+                android:layout_height="32dp"
                 app:layout_constraintBottom_toTopOf="@+id/mf_section_month"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.6"
+                app:mf_label_alignment_text="center"
                 app:mf_label_color="@color/white"
-                app:mf_label_size="@dimen/mf_pager_section_text_day"/>
+                app:mf_label_formattedText="20"
+                app:mf_label_size="@dimen/mf_pager_section_text_day" />
 
             <com.manoffocus.mfdistricts.components.mflabel.MFLabel
                 android:id="@+id/mf_section_month"
                 style="@style/MFLabel.small"
+                android:layout_width="28dp"
+                android:layout_height="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mf_section_day"
+                app:mf_label_alignment_text="center"
                 app:mf_label_color="@color/white"
                 app:mf_label_formattedText="APR" />
         </androidx.constraintlayout.widget.ConstraintLayout>
